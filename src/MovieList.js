@@ -1,6 +1,5 @@
 import MovieCard from "./moviecard.js";
-import {Component} from "react"
-
+import {Component} from "react";
 class MovieList extends Component 
 {
     handleIncStar = (movie) => {
@@ -89,6 +88,7 @@ class MovieList extends Component
         const {movies} = this.state;
         return (
             <>
+                
                 {movies.map((movie)=>(<MovieCard movies={movie} addStars={this.handleIncStar} subStar={this.handleDecStar} addFav={this.handleFav} addCart={this.handleCart}/>))}
             </>
 
