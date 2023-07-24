@@ -1,0 +1,8 @@
+.nav{
+height:70;
+background: Linear-gradient(170deg, #16c059,#0d47a1);
+display:flex;
+justify-content : space-between;
+align-items : center;
+position : relative;
+}

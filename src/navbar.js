@@ -13,17 +13,52 @@
 // limitations under the License.
 
 import { Component } from "react";
+import styled from "styled-components";
+import navbar from "./nav.module.css";
+
+const Title = styled.div`
+font-size: 30;
+color: #fff;
+font-weight:600;
+text-transform : uppercase;
+margin-left:20;
+padding-left:2%;
+
+`;
+
+const CartIcon = styled.img`
+height:48px;
+margin-right: 20px;
+`;
+
+const CartCount = styled.span`
+background:${(props)=>props.color};
+border-radius:50%;
+padding: 4px 8px;
+position:absolute;
+right:10px;
+top:-5px;
+fontSize:12;
+
+`;
+
+const CartContainer = styled.div`
+position:relative;
+cursor:pointer;
+
+`;
 
 class NavBar extends Component{
     render(){
+        const{count} = this.props;
         return (
             
-                <div style={styles.nav} className="nav">
-                    <div style={styles.title} >Title</div>
-                    <div style={styles.cartContainer}>
-                        <img src="https://cdn-icons-png.flaticon.com/128/891/891462.png" alt="Cart Icon" style={styles.cartIcon}/> 
-                        <span style={styles.cartCount}>0</span>
-                    </div>
+                <div className={navbar.nav}>
+                    <Title> Movie-App </Title>
+                    <CartContainer>
+                        <CartIcon  src="https://cdn-icons-png.flaticon.com/128/891/891462.png" alt="Cart Icon" /> 
+                        <CartCount color="yellow">{count}</CartCount>
+                    </CartContainer>
                 </div>  
             
 
@@ -32,47 +67,18 @@ class NavBar extends Component{
 }
 export default NavBar;
 const styles = {
-    nav:{
-        // {width:"100%", height:"70px",background:"red", display:"flex",justifyContent: "space-between"}
-        height:70,
-        background: "#426762",
-        display:"flex",
-        justifyContent : "space-between",
-        alignItems:"center",
-        position:"relative"
-
-
-    },
+   
     cartContainer:{
-        position:"relative",
-        cursor:"pointer",
+       
 
 
     },
-
-    cartIcon : {
-        height:48,
-        marginRight: 20
-
-    },
-
     cartCount:{
-        background:"orange",
-        borderRadius:"50%",
-        padding: "4px 8px",
-        position:"absolute",
-        right:10,
-        top:-5,
-        fontSize:12
+       
     },
 
 
     title: {
-        fontSize: 30,
-        color: "#fff",
-        fontweight:600,
-        textTransform : "uppercase",
-        marginLeft:20,
-
+       
     },
 }

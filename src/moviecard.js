@@ -24,7 +24,7 @@ class MovieCard extends Component
                             {plot}
                         </div>
                         <div className="price">
-                            {price}
+                            Rs: {price}
                         </div>
 
                         <div className="footer">
@@ -39,7 +39,7 @@ class MovieCard extends Component
                             </div>
                             
                             <button onClick={()=>this.props.addFav(this.props.movies)}className={fav?"unfavourite-btn":"favourite-btn"}>{fav?"unfavourite":"favourite"}</button>
-                            <button onClick={()=>this.props.addCart(this.props.movies)} className={added?"unfavourite-btn":"cart-btn"}> {added?"Remove from cart":"Add to cart" }</button>
+                            <button onClick={()=>{this.props.addCart(this.props.movies); }} className={added?"unfavourite-btn":"cart-btn"}> {added?"Remove from cart":"Add to cart" }</button>
                         </div>
 
                     </div>
